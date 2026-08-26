@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CICS - Credulous Institute of Computer Science | Sachendi, Kanpur</title>
+    <!-- Speed & Resource Pre-connects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://script.google.com">
+    <link rel="dns-prefetch" href="https://maps.google.com">
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --accent-green: #10b981;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background: var(--secondary);
+            color: #94a3b8;
+            font-size: 0.875rem;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-info i {
+            color: var(--accent);
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5% 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid #dbeafe;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 span {
+            color: var(--primary);
+            background: linear-gradient(120deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .hero-image-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 30px;
+            color: white;
+        }
+
+        .lab-features-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .lab-features-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        .lab-features-list i {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+        }
+
+        /* Section Layouts */
+        .section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* About Us Section Styles */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .about-images-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .about-img-box {
+            width: 100%;
+            height: 248px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #cbd5e1;
+            box-shadow: var(--card-shadow);
+        }
+
+        .about-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-box.placeholder {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Reviews Section Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f1f5f9;
+            position: relative;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #dbeafe;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 0.85rem;
+        }
+
+        .google-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 1.2rem;
+            color: #4285f4;
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-header {
+            background: var(--secondary);
+            color: white;
+            padding: 24px;
+            position: relative;
+        }
+
+        .course-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .course-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .course-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .course-features li {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-features i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        /* Map & Location Section */
+        .location-section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .location-details h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .info-list {
+            margin: 25px 0;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .info-item div h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .info-item div p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            height: 380px;
+            width: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: #94a3b8;
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Social Media Icons Styling in Footer */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: #1e293b;
+            color: #94a3b8;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .social-btn.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+
+        .social-btn.whatsapp:hover {
+            background: #25D366;
+        }
+
+        .social-btn.facebook:hover {
+            background: #1877F2;
+        }
+
+        .social-btn.youtube:hover {
+            background: #FF0000;
+        }
+
+        /* Footer Right Side Animated Contact Items */
+        .footer-contact-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .footer-contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .contact-icon-box {
+            width: 36px;
+            height: 36px;
+            background: #1e293b;
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        .footer-contact-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact-link:hover .contact-icon-box {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+        }
+
+        .footer-contact-link.phone-hover:hover .contact-icon-box {
+            background: #10b981;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+        }
+
+        .footer-contact-link.email-hover:hover .contact-icon-box {
+            background: #f59e0b;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        /* Email OTP Verification Section */
+        .otp-verification-section {
+            display: none;
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-top: 15px;
+        }
+
+        .otp-input-box {
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 6px;
+            font-weight: 700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h2 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Header -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fa-solid fa-location-dot"></i> Gayatri Nagar, Sachendi, Kanpur - 209304</span>
+            <span><i class="fa-solid fa-clock"></i> Mon-Sat: 08:00 AM - 7:00 PM | Sun: 11:00 AM - 2:00 PM</span>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-star"></i> Rated 5.0/5.0 on Google Maps</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="Institute Logo.jpg" alt="CICS Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>CICS</h1>
+                    <span>CREDULOUS INSTITUTE</span>
+                </div>
+            </a>
+
+            <i class="fa-solid fa-bars mobile-toggle" id="menuToggle"></i>
+
+            <ul class="nav-links" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#reviews">Google Reviews</a></li>
+                <li><a href="https://credulousinstitute.github.io/cics-verification/" target="_blank"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Verify Certificate</a></li>
+                <li><a href="#location">Find Us</a></li>
+                <li><button class="btn btn-primary" onclick="openModal('', 'Course Enrollment')">Enroll Now</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fa-solid fa-award"></i> #1 Rated Computer Institute in Sachendi, Kanpur
+            </div>
+            <h2>Master Computer Skills for a <span>Brighter Future</span></h2>
+            <p>Empowering students with 100% practical IT training with interactive video lectures, government exam typing preparation, and dedicated computer lab facilities.</p>
+            
+            <div class="hero-btns">
+                <button class="btn btn-primary" onclick="openModal('', 'Free Counseling Request')">
+                    <i class="fa-solid fa-user-plus"></i> Get Free Counseling
+                </button>
+                <a href="https://credulousinstitute.github.io/cics-verification/" target="_blank" class="btn btn-outline">
+                    <i class="fa-solid fa-certificate"></i> Verify Certificate
+                </a>
+            </div>
+
+            <!-- Stats Section with Animated Certified Students Counter -->
+            <div class="hero-stats" id="stats-section">
+                <div class="stat-item">
+                    <h3 id="certifiedCounter">1+</h3>
+                    <p>Total Certified Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1:1</h3>
+                    <p>Computer Per Student</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5.0 ★</h3>
+                    <p>Google Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-card">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <i class="fa-solid fa-desktop" style="font-size: 2rem; color: var(--accent);"></i>
+                <div>
+                    <h3 style="font-size: 1.3rem;">Grasp-Right-Skills-At-Right-Place</h3>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">Sachendi's Premier IT Learning Hub with Modern Computer Labs</p>
+                </div>
+            </div>
+
+            <ul class="lab-features-list">
+                <li><i class="fa-solid fa-circle-check"></i> NIELIT Recognized 'O' Level & CCC Courses</li>
+                <li><i class="fa-solid fa-circle-check"></i> Govt. Level Typing Software (UP Police & SSB Pattern)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Advance MS Office, Tally ERP 9 + GST & Digital Marketing</li>
+                <li><i class="fa-solid fa-circle-check"></i> Hardware Assembly, PC Networking & Python Coding</li>
+                <li><i class="fa-solid fa-circle-check"></i> Safe & Supportive Learning Environment for Girls</li>
+            </ul>
+
+            <div style="margin-top: 25px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="font-size: 0.85rem; color: #cbd5e1;">Admissions open for new batch starting this week!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section" id="about" style="background: #ffffff; border-radius: 24px; box-shadow: var(--card-shadow); margin-top: 20px; margin-bottom: 40px;">
+        <div class="section-header" style="margin-bottom: 30px;">
+            <div class="badge" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-building-columns"></i> Welcome to CICS</div>
+            <h2>About Our Institute</h2>
+            <p>Empowering the youth of Sachendi & Kanpur with modern digital literacy and technical capabilities.</p>
+        </div>
+
+        <div class="about-grid">
+            <!-- Text Content Area -->
+            <div class="about-text">
+                <h3>Credulous Institute of Computer Science (CICS)</h3>
+                <p>Welcome to <strong>Credulous Institute</strong>, Sachendi’s leading IT training center, Founded by <strong> Er. Vishal Singh (MCA, BCA, O Level)</strong>  Highly Professional Educator that is committed to bridging the digital divide by offering top-tier computer education, government exam preparation (Nielit CCC Exam & NIELIT 'O' Level), and high-demand future technical courses.</p>
+                <p>Our lab is equipped with individual high-speed computers with internet, expert instruction, and dedicated software modules designed specifically for recruitment exams like UP Police, SSB, and UPSSSC typing tests.</p>
+                
+                <div style="display: flex; gap: 20px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.2rem;"><i class="fa-solid fa-bullseye"></i> Our Mission</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">To deliver practical, job-oriented computer training that enables every student to achieve professional success and achieve their professional goals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editable Image Area -->
+            <div class="about-images-grid">
+                <!-- Image Box 1 -->
+                <div class="about-img-box">
+                    <img src="Lab.jpg" alt="CICS Lab Image">
+                </div>
+
+                <!-- Image Box 2 Placeholder -->
+                <div class="about-img-box">
+                    <img src="event.jpg" alt="CICS Event Image">
+                </div>
+
+                <!-- Image Box 3 Placeholder -->
+                <div class="about-img-box">
+                    <img src="combine.jpg" alt="CICS Achiever's Image">
+                </div>
+
+                <!-- Image Box 4 Placeholder -->
+                <div class="about-img-box">
+                    <img src="office.jpg" alt="CICS Institute Building Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Reviews Segment -->
+    <section class="section" id="reviews" style="background: #f8fafc; border-radius: 24px; margin-bottom: 40px;">
+        <div class="section-header">
+            <div class="badge" style="background: #e0f2fe; color: #0284c7;"><i class="fa-brands fa-google"></i> Google Map Feedback</div>
+            <h2>What Our Students Say</h2>
+            <p>Read genuine reviews from students who transformed their technical skills at CICS Institute.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+                <i class="fa-brands fa-google google-icon"></i>
+                <div class="review-header">
+                    <div class="reviewer-avatar">A</div>
+                    <div class="reviewer-info">
+                        <h4>Amit Kumar</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">"Passed my UP Police Computer Operator typing exam thanks to CICS! They train on Mangal Inscript keyboard layout with exact exam timing and backspace rules."</p>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+                <i class="fa-brands fa-google google-icon"></i>
+                <div class="review-header">
+                    <div class="reviewer-avatar">P</div>
+                    <div class="reviewer-info">
+                        <h4>Priya Sharma</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">"The practical experience in Advance Excel, Tally ERP 9, and Digital Marketing is awesome. Very safe environment for female students."</p>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+                <i class="fa-brands fa-google google-icon"></i>
+                <div class="review-header">
+                    <div class="reviewer-avatar">R</div>
+                    <div class="reviewer-info">
+                        <h4>Rahul Verma</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">"Awesome lab setup! Every student gets a separate computer. Highly recommend CICS for CCC, Hardware & Networking, and NIELIT 'O' Level."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL 9 POPULAR COURSES RESTORED -->
+    <section class="section" id="courses">
+        <div class="section-header">
+            <h2>Our Popular Programs</h2>
+            <p>Job-oriented computer skill development, competitive typing exams, IT hardware, and NIELIT recognized courses.</p>
+        </div>
+
+        <div class="courses-grid">
+            
+            <!-- 1. NIELIT 'O' Level -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Govt Recognized</span>
+                    <h3>NIELIT 'O' Level (IT)</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">1 Year Foundation Course (R5.1 Syllabus)</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 Year / 520 Hrs</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> NSQF Level 5</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> M1-R5: IT Tools & Network Basics</li>
+                        <li><i class="fa-solid fa-check"></i> M2-R5: Web Designing & Publishing</li>
+                        <li><i class="fa-solid fa-check"></i> M3-R5: Programming through Python</li>
+                        <li><i class="fa-solid fa-check"></i> M4-R5: Internet of Things (IoT)</li>
+                        <li><i class="fa-solid fa-check"></i> Practical Exams & Project Guidance</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('NIELIT O Level', 'Course Enrollment')">Enroll in 'O' Level</button>
+                </div>
+            </div>
+
+            <!-- 2. Nielit CCC Exam -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Govt Job Prep</span>
+                    <h3>Nielit CCC Exam</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Course on Computer Concepts</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 Months</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> NIELIT Pattern</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> LibreOffice Writer, Calc & Impress</li>
+                        <li><i class="fa-solid fa-check"></i> Internet, Banking & Digital Services</li>
+                        <li><i class="fa-solid fa-check"></i> Cyber Security and Cyber Laws</li>
+						<li><i class="fa-solid fa-check"></i> Online Practice Mock Tests</li>
+                        <li><i class="fa-solid fa-check"></i> High First-Attempt Pass Rate</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Nielit CCC Exam', 'Course Enrollment')">Enroll in CCC</button>
+                </div>
+            </div>
+
+            <!-- 3. ADCA -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Most Popular</span>
+                    <h3>ADCA (Advanced Diploma)</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">1 Year Complete Application Diploma</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 12 Months</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> Complete Certification</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Computer Fundamentals & MS Office/Libre Office</li>
+                        <li><i class="fa-solid fa-check"></i> Tally ERP 9 Basics</li>
+                        <li><i class="fa-solid fa-check"></i> Professional Email and Corporate Writing</li>
+                        <li><i class="fa-solid fa-check"></i> Web Fundamentals & Internet Tools</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('ADCA', 'Course Enrollment')">Enroll in ADCA</button>
+                </div>
+            </div>
+
+            <!-- 4. Govt. Level Typing Exam English & Hindi -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Govt Skill Test</span>
+                    <h3>Govt. Level Typing Exam (English & Hindi)</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Specialized Coaching for UP Police, SSB, UPSSSC & SSC</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 to 3 Months</span>
+                        <span><i class="fa-solid fa-keyboard"></i> 30-35 WPM Target</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>English Typing:</strong> Target 30 - 35+ WPM (QWERTY Layout)</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Hindi Typing:</strong> Target 25 - 30+ WPM (Mangal Inscript)</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Exam Software Simulation:</strong> UP Police SI/ASI & Computer Operator, SSB Clerk & SSC Exam interface</li>
+                        <li><i class="fa-solid fa-check"></i> Timed Passage Tests (10 - 15 Mins) with Accuracy Calculation</li>
+                        <li><i class="fa-solid fa-check"></i> Speed Enhancement & Backspace Restriction Practice</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Govt. Level Typing Exam', 'Course Enrollment')">Enroll in Typing Coaching</button>
+                </div>
+            </div>
+
+            <!-- 5. Tally ERP 9 + GST -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Accounting</span>
+                    <h3>Tally ERP 9 + GST</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Practical Accounting & Taxation</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 Months</span>
+                        <span><i class="fa-solid fa-calculator"></i> Real-World Practice</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Voucher Entries & Inventory Management</li>
+                        <li><i class="fa-solid fa-check"></i> GST Return Basics & E-Way Billing</li>
+                        <li><i class="fa-solid fa-check"></i> Report Generation & Financial Statements</li>
+						<li><i class="fa-solid fa-check"></i> <strong>Career Opportunities:</strong> Junior Accountant <br>
+						Tally Data Entry Operator <br>
+						Accounts Assistant  <br>
+						Billing Executive <br>
+						Store Manager</li>
+						
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Tally ERP 9 + GST', 'Course Enrollment')">Enroll in Tally</button>
+                </div>
+            </div>
+
+            <!-- 6. Advance Microsoft Office -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Office Skills</span>
+                    <h3>Advance MS Office (Word, Excel, PowerPoint)</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Professional Data Analysis & Office Automation</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 - 3 Months</span>
+                        <span><i class="fa-solid fa-file-excel"></i> Corporate Ready</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Advance Excel:</strong> VLOOKUP, HLOOKUP, Pivot Tables, Conditional Formulas</li>
+                        <li><i class="fa-solid fa-check"></i> Data Visualization, Charts & Introduction to Macros</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>MS Word:</strong> Professional Formatting, Mail Merge & Documentation</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>PowerPoint:</strong> Slide Master, Animations & Special Transitions</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Advance MS Office', 'Course Enrollment')">Enroll in MS Office</button>
+                </div>
+            </div>
+
+            <!-- 7. Digital Marketing -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Trending Career</span>
+                    <h3>Digital Marketing</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Online Business Branding & Traffic Generation</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 Months</span>
+                        <span><i class="fa-solid fa-chart-line"></i> Live Campaign Labs</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Search Engine Optimization (SEO):</strong> On-Page, Off-Page & Local Business Mapping</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Social Media Marketing (SMM):</strong> Meta Ads (Facebook & Instagram)</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Google Ads:</strong> Search & Pay-Per-Click (PPC) Advertising</li>
+                        <li><i class="fa-solid fa-check"></i> Web Analytics (GA4), Content Strategy & Freelancing Basics</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Digital Marketing', 'Course Enrollment')">Enroll in Digital Marketing</button>
+                </div>
+            </div>
+
+            <!-- 8. Hardware & Networking -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Tech Maintenance</span>
+                    <h3>Hardware & Networking</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">PC Architecture, Network Setup & Troubleshooting</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 - 6 Months</span>
+                        <span><i class="fa-solid fa-wrench"></i> Practical Lab</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Computer Hardware:</strong> PC Assembly, Disassembly & Fault Diagnosis</li>
+                        <li><i class="fa-solid fa-check"></i> OS Installation (Windows/Linux), Drivers & System Software</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Networking Fundamentals:</strong> IP Addressing, Subnetting & LAN/WAN Setup</li>
+                        <li><i class="fa-solid fa-check"></i> Router/Switch Configuration, CAT6 Cable Crimping & Wi-Fi Security</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Hardware & Networking', 'Course Enrollment')">Enroll in Hardware Course</button>
+                </div>
+            </div>
+
+            <!-- 9. Programming Languages -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-tag">Software Development</span>
+                    <h3>Programming Languages</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Core Coding & Software Logic Building</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 - 6 Months</span>
+                        <span><i class="fa-solid fa-laptop-code"></i> Live Projects</span>
+                    </div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Python Fundamentals & Object-Oriented Logic</li>
+                        <li><i class="fa-solid fa-check"></i> C / C++ Programming & Data Structure Basics</li>
+                        <li><i class="fa-solid fa-check"></i> Web Stack: HTML, CSS & JavaScript</li>
+                        <li><i class="fa-solid fa-check"></i> Code Debugging & Project Building</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openModal('Programming Languages', 'Course Enrollment')">Enroll in Coding</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Live Google Map -->
+    <section class="section" id="location">
+        <div class="location-section">
+            <div class="location-details">
+                <div class="badge"><i class="fa-solid fa-map-pin"></i> Visit Our Institute Building</div>
+                <h3>Credulous Institute of Computer Science</h3>
+                <p style="color: var(--text-muted);">Conveniently located Near Highway in Gayatri Nagar, Sachendi, Kanpur Nagar.</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Gayatri Nagar, Sachendi, Kanpur - 209304, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 08:00 AM – 07:00 PM<br>Sunday: 11:00 AM – 02:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/place/(+CICS+)+CREDULOUS+INSTITUTE+OF+COMPUTER+SCIENCE/@26.4304652,80.1659854,155m/data=!3m1!1e3!4m6!3m5!1s0x399c4bdb1524c007:0x1db2e686dab2dc71!8m2!3d26.4304828!4d80.1659478!16s%2Fg%2F11jt29qh0c?entry=ttu" target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-directions"></i> Open in Google Maps
+                </a>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Credulous+Institute+of+Computer+Science,+Sachendi,+Kanpur&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    loading="lazy"
+                    title="CICS Campus Google Map"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <!-- Left Column: Logo & Social Media Icons -->
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <img src="Institute Logo.jpg" alt="CICS Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1 style="color: white;">CICS</h1>
+                        <span style="color: #60a5fa;">CREDULOUS INSTITUTE</span>
+                    </div>
+                </div>
+                <p>CICS is committed to providing quality IT education and technical computer skills to empower students in Sachendi, Kanpur.</p>
+                
+                <!-- Social Media Buttons -->
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/916386600838" target="_blank" class="social-btn whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#reviews">Google Reviews</a></li>
+                    <li><a href="https://credulousinstitute.github.io/cics-verification/" target="_blank">Certificate Verification</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Courses</h4>
+                <ul class="footer-links">
+                    <li><a href="#courses">NIELIT 'O' Level</a></li>
+                    <li><a href="#courses">Nielit CCC Exam</a></li>
+                    <li><a href="#courses">ADCA Diploma</a></li>
+                    <li><a href="#courses">Govt. Typing Exam</a></li>
+                    <li><a href="#courses">Tally ERP 9 + GST</a></li>
+                    <li><a href="#courses">Advance MS Office</a></li>
+                    <li><a href="#courses">Digital Marketing</a></li>
+                    <li><a href="#courses">Hardware & Networking</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Visit Campus & Contact Details with Hover Animated Icons -->
+            <div class="footer-col">
+                <h4>Visit Institute Building</h4>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <a href="#location" class="footer-contact-link">
+                            <div class="contact-icon-box"><i class="fa-solid fa-map-pin"></i></div>
+                            <span>Near Highway, Gayatri Nagar, Sachendi, Kanpur Nagar, UP 209304</span>
+                        </a>
+                    </li>
+                    <li class="footer-contact-item">
+                        <a href="tel:+916386600838" class="footer-contact-link phone-hover">
+                            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <span>+91 6386600838</span>
+                        </a>
+                    </li>
+                    <li class="footer-contact-item">
+                        <a href="mailto:credulousinstitute@gmail.com" class="footer-contact-link email-hover">
+                            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <span>credulousinstitute@gmail.com</span>
+                        </a>
+                    </li>
+                    <li class="footer-contact-item" style="margin-top: 10px;">
+                        <span style="font-size: 0.85rem; color: #64748b; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-calendar-check" style="color: var(--accent);"></i> Open 7 Days a Week
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CICS - Credulous Institute of Computer Science. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Enrollment & Email Verification Modal -->
+    <div class="modal" id="enrollModal">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-modal" onclick="closeModal('enrollModal')"></i>
+            <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: var(--secondary); margin-bottom: 5px;">Admission Enquiry</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Verify your email address to submit your enquiry.</p>
+
+            <form id="leadForm" onsubmit="event.preventDefault();">
+                <input type="hidden" id="enquiryType" value="Enrollment">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="studentName" placeholder="Enter full name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="studentPhone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="studentEmail" placeholder="Enter your email address" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label>Select Course</label>
+                    <select id="courseSelect">
+                        <option value="General Counseling / Undecided">General Inquiry / Need Counseling</option>
+                        <option value="NIELIT O Level">NIELIT 'O' Level (IT)</option>
+                        <option value="Nielit CCC Exam">Nielit CCC Exam</option>
+                        <option value="ADCA">ADCA Diploma</option>
+                        <option value="Govt. Level Typing Exam">Govt. Level Typing Exam (English & Hindi)</option>
+                        <option value="Tally ERP 9 + GST">Tally ERP 9 + GST</option>
+                        <option value="Advance MS Office">Advance MS Office (Word, Excel, PowerPoint)</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Hardware & Networking">Hardware & Networking</option>
+                        <option value="Programming Languages">Programming Languages (Python, C/C++)</option>
+                    </select>
+                </div>
+
+                <!-- Step 1: Send OTP -->
+                <button type="button" id="sendOtpBtn" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="sendEmailOTP()">
+                    <i class="fa-solid fa-paper-plane"></i> Send Verification OTP
+                </button>
+
+                <!-- Step 2: OTP Verification Section -->
+                <div class="otp-verification-section" id="otpSection">
+                    <div class="form-group">
+                        <label style="text-align: center; color: var(--primary);">Enter 6-Digit OTP sent to your Email</label>
+                        <input type="text" id="otpInput" class="otp-input-box" maxlength="6" placeholder="------" inputmode="numeric">
+                    </div>
+                    <button type="button" id="verifyBtn" class="btn btn-primary" style="width: 100%; justify-content: center; background: var(--accent-green); margin-bottom: 8px;" onclick="verifyEmailOTP()">
+                        <i class="fa-solid fa-circle-check"></i> Verify & Submit Application
+                    </button>
+                    <div style="text-align: center;">
+                        <button type="button" style="background: none; border: none; color: var(--text-muted); font-size: 0.8rem; cursor: pointer; text-decoration: underline;" onclick="sendEmailOTP()">
+                            Resend Code
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // GOOGLE APPS SCRIPT WEB APP URL:
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXYuVcBrpxvprlYNqP-43OjvFlAd_9H0ry5Jso59oDZ7_ODROI5rK1aiQ0l_nsLDaRWQ/exec';
+
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        }, { passive: true });
+
+        // Modals Logic
+        function openModal(courseName = '', enquiryType = 'Course Enrollment') {
+            document.getElementById('enrollModal').style.display = 'flex';
+            document.getElementById('enquiryType').value = enquiryType;
+            document.getElementById('modalTitle').innerText = enquiryType;
+            if (courseName) {
+                document.getElementById('courseSelect').value = courseName;
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.getElementById('otpSection').style.display = 'none';
+            document.getElementById('sendOtpBtn').style.display = 'inline-flex';
+            document.getElementById('studentEmail').disabled = false;
+            document.getElementById('studentName').disabled = false;
+            document.getElementById('studentPhone').disabled = false;
+        }
+
+        // 1. Send Email OTP Request
+        async function sendEmailOTP() {
+            const name = document.getElementById('studentName').value.trim();
+            const phone = document.getElementById('studentPhone').value.trim();
+            const email = document.getElementById('studentEmail').value.trim();
+            const sendBtn = document.getElementById('sendOtpBtn');
+
+            if (!name || phone.length !== 10 || !email || !email.includes('@')) {
+                alert('Please enter your full name, 10-digit phone number, and a valid email address.');
+                return;
+            }
+
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending OTP...';
+
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        action: 'sendOtp',
+                        name: name,
+                        email: email
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    alert('A 6-digit verification code has been sent to ' + email + ' (Please check Inbox and Spam folder).');
+                    sendBtn.style.display = 'none';
+                    document.getElementById('otpSection').style.display = 'block';
+                    
+                    document.getElementById('studentEmail').disabled = true;
+                    document.getElementById('studentName').disabled = true;
+                    document.getElementById('studentPhone').disabled = true;
+                } else {
+                    alert('Error: ' + result.message);
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Verification OTP';
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Could not send OTP. Please check your internet connection or try again.');
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Verification OTP';
+            }
+        }
+
+        // 2. Verify Email OTP & Save Lead
+        async function verifyEmailOTP() {
+            const otp = document.getElementById('otpInput').value.trim();
+            const verifyBtn = document.getElementById('verifyBtn');
+
+            if (otp.length !== 6) {
+                alert('Please enter the complete 6-digit code received on your email.');
+                return;
+            }
+
+            verifyBtn.disabled = true;
+            verifyBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
+
+            const payload = {
+                action: 'verifyAndSave',
+                otp: otp,
+                name: document.getElementById('studentName').value.trim(),
+                phone: document.getElementById('studentPhone').value.trim(),
+                email: document.getElementById('studentEmail').value.trim(),
+                course: document.getElementById('courseSelect').value,
+                enquiryType: document.getElementById('enquiryType').value
+            };
+
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    alert('Email Verified! Your application has been successfully submitted to CICS Computer Institute.');
+                    document.getElementById('leadForm').reset();
+                    closeModal('enrollModal');
+                } else {
+                    alert(result.message);
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Submission failed. Please check the OTP and try again.');
+            } finally {
+                verifyBtn.disabled = false;
+                verifyBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Verify & Submit Application';
+            }
+        }
+
+        // High Performance Intersection Observer for Counter Animation
+        const statsEl = document.getElementById('stats-section');
+        if (statsEl && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                if (entries[0].isIntersecting) {
+                    let count = 1;
+                    const counter = document.getElementById('certifiedCounter');
+                    const timer = setInterval(() => {
+                        count += 2;
+                        if (count >= 99) {
+                            counter.innerText = "100+";
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = count + "+";
+                        }
+                    }, 40);
+                    obs.disconnect();
+                }
+            }, { threshold: 0.2 });
+            observer.observe(statsEl);
+        }
+    </script>
+</body>
+</html>
