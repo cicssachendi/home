@@ -88,7 +88,7 @@
 
     <!-- Speed & Resource Pre-connects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://script.google.com">
     <link rel="dns-prefetch" href="https://maps.google.com">
@@ -1066,12 +1066,23 @@
                 font-size: 2.1rem;
             }
 
+            /* Mobile Image Cut Fix */
             .about-images-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .about-img-box {
-                height: 220px;
+                height: auto;
+                aspect-ratio: 16 / 10;
+                background: #0f172a;
+            }
+
+            .about-img-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                background-color: #0b1120;
             }
 
             .footer-grid {
