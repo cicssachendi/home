@@ -86,6 +86,32 @@
     }
     </script>
 
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which is the best computer institute in Sachendi Kanpur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credulous Institute of Computer Science (CICS) located in Gayatri Nagar, Sachendi, Kanpur is rated as the best computer institute, offering courses like NIELIT O Level, CCC, ADCA, Tally, and Govt Typing exams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide government typing exam preparation in Sachendi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CICS provides specialized English and Hindi (Mangal Inscript) typing exam coaching with exam simulation software for UP Police, SSB, and UPSSSC exams."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Speed & Resource Pre-connects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -112,6 +138,18 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #f8fafc;
+            --bg-light: #0f172a;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --white: #1e293b;
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -125,6 +163,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Top Notification Bar */
@@ -161,6 +200,12 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
         }
 
         .nav-container {
@@ -202,7 +247,7 @@
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             list-style: none;
             align-items: center;
         }
@@ -217,6 +262,28 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-dark);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: scale(1.08);
         }
 
         .btn {
@@ -396,6 +463,40 @@
             font-weight: 600;
         }
 
+        /* Success Stories / Placement Marquee Ticker */
+        .placement-ticker {
+            background: var(--primary);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .ticker-track {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 40px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .ticker-item i {
+            color: var(--accent);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Section Layouts */
         .section {
             padding: 80px 5%;
@@ -551,11 +652,11 @@
         }
 
         .review-card {
-            background: white;
+            background: var(--white);
             padding: 25px;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
-            border: 1px solid #f1f5f9;
+            border: 1px solid rgba(241, 245, 249, 0.2);
             position: relative;
         }
 
@@ -598,6 +699,56 @@
             color: #4285f4;
         }
 
+        /* FAQ Accordion Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(241, 245, 249, 0.2);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 20px 20px;
+        }
+
         /* Courses Grid */
         .courses-grid {
             display: grid;
@@ -606,11 +757,11 @@
         }
 
         .course-card {
-            background: white;
+            background: var(--white);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            border: 1px solid #f1f5f9;
+            border: 1px solid rgba(241, 245, 249, 0.2);
             display: flex;
             flex-direction: column;
             transition: var(--transition);
@@ -661,7 +812,7 @@
             color: var(--text-muted);
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(241, 245, 249, 0.2);
         }
 
         .course-features {
@@ -685,7 +836,7 @@
 
         /* Map & Location Section */
         .location-section {
-            background: white;
+            background: var(--white);
             border-radius: 24px;
             padding: 40px;
             box-shadow: var(--card-shadow);
@@ -693,6 +844,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+            border: 1px solid rgba(241, 245, 249, 0.2);
         }
 
         .location-details h3 {
@@ -749,6 +901,31 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1500;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            color: white;
         }
 
         /* Footer */
@@ -927,7 +1104,8 @@
         }
 
         .modal-content {
-            background: white;
+            background: var(--white);
+            color: var(--text-dark);
             padding: 35px;
             border-radius: 20px;
             max-width: 480px;
@@ -960,6 +1138,8 @@
             width: 100%;
             padding: 12px;
             border: 1px solid #cbd5e1;
+            background: var(--white);
+            color: var(--text-dark);
             border-radius: 8px;
             font-size: 0.9rem;
             outline: none;
@@ -968,7 +1148,7 @@
         /* Email OTP Verification Section */
         .otp-verification-section {
             display: none;
-            background: #f8fafc;
+            background: rgba(248, 250, 252, 0.05);
             padding: 16px;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
@@ -1026,7 +1206,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: white;
+                background: var(--white);
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -1093,6 +1273,11 @@
 </head>
 <body>
 
+    <!-- Floating WhatsApp Quick Connect Button -->
+    <a href="https://wa.me/916386600838?text=Hello%20CICS%20Sachendi,%20I%20want%20to%20know%20more%20about%20computer%20courses." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- Top Info Header -->
     <div class="top-bar">
         <div class="top-info">
@@ -1125,6 +1310,7 @@
                 <li><a href="#reviews">Google Reviews</a></li>
                 <li><a href="https://credulousinstitute.github.io/cics-verification/" target="_blank"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Verify Certificate</a></li>
                 <li><a href="#location">Find Us</a></li>
+                <li><button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode"><i class="fa-solid fa-moon" id="themeIcon"></i></button></li>
                 <li><button class="btn btn-primary" onclick="openModal('', 'Course Enrollment')">Enroll Now</button></li>
             </ul>
         </div>
@@ -1176,8 +1362,20 @@
         </div>
     </section>
 
+    <!-- Success Stories & Achievements Ticker -->
+    <div class="placement-ticker">
+        <div class="ticker-track">
+            <span class="ticker-item"><i class="fa-solid fa-circle-check"></i> CICS Students Selected in UP Police Computer Operator Exam!</span>
+            <span class="ticker-item"><i class="fa-solid fa-star"></i> 100% Practical Computer Lab Training in Sachendi</span>
+            <span class="ticker-item"><i class="fa-solid fa-award"></i> NIELIT 'O' Level & CCC Batch Admissions Open</span>
+            <span class="ticker-item"><i class="fa-solid fa-circle-check"></i> CICS Students Selected in UP Police Computer Operator Exam!</span>
+            <span class="ticker-item"><i class="fa-solid fa-star"></i> 100% Practical Computer Lab Training in Sachendi</span>
+            <span class="ticker-item"><i class="fa-solid fa-award"></i> NIELIT 'O' Level & CCC Batch Admissions Open</span>
+        </div>
+    </div>
+
     <!-- ABOUT US SECTION -->
-    <section class="section" id="about" style="background: #ffffff; border-radius: 24px; box-shadow: var(--card-shadow); margin-top: 20px; margin-bottom: 40px;">
+    <section class="section" id="about" style="background: var(--white); border-radius: 24px; box-shadow: var(--card-shadow); margin-top: 40px; margin-bottom: 40px;">
         <div class="section-header" style="margin-bottom: 30px;">
             <div class="badge" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-building-columns"></i> Welcome to CICS</div>
             <h2>About Our Institute</h2>
@@ -1221,7 +1419,7 @@
     </section>
 
     <!-- Google Map Reviews Segment -->
-    <section class="section" id="reviews" style="background: #f8fafc; border-radius: 24px; margin-bottom: 40px;">
+    <section class="section" id="reviews" style="background: var(--bg-light); border-radius: 24px; margin-bottom: 40px;">
         <div class="section-header">
             <div class="badge" style="background: #e0f2fe; color: #0284c7;"><i class="fa-brands fa-google"></i> Google Map Feedback</div>
             <h2>What Our Students Say</h2>
@@ -1479,6 +1677,57 @@
         </div>
     </section>
 
+    <!-- FAQ Accordion Section for SEO & User Guidance -->
+    <section class="section" id="faq">
+        <div class="section-header">
+            <div class="badge" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-circle-question"></i> Got Questions?</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common queries regarding admissions, classes, and computer training at CICS Sachendi.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Which is the best computer institute in Sachendi Kanpur?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Credulous Institute of Computer Science (CICS) located in Gayatri Nagar, Sachendi, Kanpur is rated #1. We offer 100% practical lab training with individual PC ratios, expert mentoring by Er. Vishal Singh, and top-tier courses like NIELIT O Level, CCC, ADCA, and Govt Typing exam preparation.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide Hindi and English typing coaching for government exams?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We specialize in government recruitment typing exam prep (UP Police Computer Operator, SI/ASI, SSB, and UPSSSC) supporting both English (QWERTY) and Hindi (Mangal Inscript layout) with professional speed tracking and exam software simulation.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can I verify my institute completion certificate?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You can easily verify your certificate online by clicking on the "Verify Certificate" button in the menu or visiting our online verification portal linked directly with our secure database.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What are the institute operational timings?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We remain open 7 days a week to support students! Monday to Saturday: 08:00 AM – 07:00 PM, and Sunday: 11:00 AM – 02:00 PM.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Location & Live Google Map -->
     <section class="section" id="location">
         <div class="location-section">
@@ -1674,6 +1923,42 @@
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         }, { passive: true });
+
+        /* Dark / Light Theme Toggle Script */
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const currentTheme = localStorage.getItem('cics_theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('cics_theme', 'light');
+                themeIcon.className = 'fa-solid fa-moon';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('cics_theme', 'dark');
+                themeIcon.className = 'fa-solid fa-sun';
+            }
+        });
+
+        /* FAQ Accordion Script */
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            });
+        });
 
         function openModal(courseName = '', enquiryType = 'Course Enrollment') {
             document.getElementById('enrollModal').style.display = 'flex';
