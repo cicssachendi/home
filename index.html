@@ -138,16 +138,55 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Dark Theme Variables */
+        /* Dark Theme Variables Fixed */
         [data-theme="dark"] {
             --primary: #3b82f6;
             --primary-dark: #2563eb;
-            --secondary: #f8fafc;
+            --secondary: #ffffff;
             --bg-light: #0f172a;
             --text-dark: #f8fafc;
             --text-muted: #94a3b8;
             --white: #1e293b;
             --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Dark Mode Extra Text Fixes */
+        [data-theme="dark"] .logo-text h1 {
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .section-header h2, 
+        [data-theme="dark"] .about-text h3, 
+        [data-theme="dark"] .location-details h3,
+        [data-theme="dark"] .faq-question,
+        [data-theme="dark"] .reviewer-info h4,
+        [data-theme="dark"] .info-item div h4 {
+            color: var(--text-dark);
+        }
+
+        /* Course Card Dark Mode Specific Fixes */
+        [data-theme="dark"] .course-card {
+            background: #1e293b;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .course-header {
+            background: #0f172a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .course-header h3,
+        [data-theme="dark"] .course-header p {
+            color: #ffffff !important;
+        }
+
+        [data-theme="dark"] .course-features li {
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .course-meta {
+            color: var(--text-muted);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -2094,5 +2133,18 @@
             observer.observe(statsEl);
         }
     </script>
+	<!-- Glowing Pulse Border Fee Portal Button -->
+<a href="fees-portal.html" target="_blank" style="position: fixed; bottom: 100px; right: 20px; background: #0f172a; color: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4); z-index: 9999; display: flex; align-items: center; gap: 10px; font-family: sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid #3b82f6; animation: pulseGlow 2s infinite; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+  <i class="fa-solid fa-graduation-cap" style="font-size: 18px; color: #38bdf8;"></i>
+  <span>Fee Portal</span>
+</a>
+
+<style>
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); border-color: #3b82f6; }
+  70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); border-color: #60a5fa; }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); border-color: #3b82f6; }
+}
+</style>
 </body>
 </html>
