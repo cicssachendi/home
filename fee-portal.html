@@ -545,20 +545,7 @@
   <div id="receiptModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
 	
-		<!-- QR ZOOM MODAL -->
-  <div id="qrZoomModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl text-center relative space-y-4">
-      <button onclick="closeQrZoom()" class="absolute top-4 right-4 w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-600 flex items-center justify-center transition-all">
-        <i class="fa-solid fa-xmark text-base"></i>
-      </button>
-      <h3 class="text-base font-extrabold text-slate-800">Scan & Pay Online</h3>
-      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex items-center justify-center">
-        <img src="qr.jpeg" alt="Zoomed QR Code" class="w-64 h-64 object-contain">
-      </div>
-      <p class="text-xs text-slate-500">Credulous Institute of Computer Science</p>
-      <button onclick="closeQrZoom()" class="w-full bg-blue-900 hover:bg-blue-950 text-white py-2.5 rounded-xl font-bold text-xs transition-all">Close</button>
-    </div>
-  </div>
+		
       
       <!-- 1. STUDENT COPY -->
       <div id="receiptCard2" class="receiptCard border-2 border-blue-900 p-4 rounded-2xl bg-white shadow-inner relative overflow-hidden">
@@ -677,6 +664,21 @@
   <div id="loader" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center">
     <div class="bg-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3.5 text-sm font-bold text-slate-700 border border-slate-100">
       <i class="fa-solid fa-circle-notch fa-spin text-blue-900 text-xl"></i> Please wait...
+    </div>
+  </div>
+  
+  <!-- QR ZOOM MODAL -->
+  <div id="qrZoomModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl text-center relative space-y-4">
+      <button onclick="closeQrZoom()" class="absolute top-4 right-4 w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-600 flex items-center justify-center transition-all">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+      <h3 class="text-base font-extrabold text-slate-800">Scan & Pay Online</h3>
+      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex items-center justify-center">
+        <img src="qr.jpeg" alt="Zoomed QR Code" class="w-64 h-64 object-contain">
+      </div>
+      <p class="text-xs text-slate-500">Credulous Institute of Computer Science</p>
+      <button onclick="closeQrZoom()" class="w-full bg-blue-900 hover:bg-blue-950 text-white py-2.5 rounded-xl font-bold text-xs transition-all">Close</button>
     </div>
   </div>
 
@@ -1589,6 +1591,17 @@
       const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(merchantName)}&am=${amount}&cu=INR`;
       window.location.href = upiUrl;
     }
+	
+	if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(registration) {
+      console.log('ServiceWorker registration successful');
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+	
   </script>
 </body>
 </html>
