@@ -97,6 +97,7 @@
             <div>
               <label class="text-xs font-bold text-slate-600">4-Digit PIN</label>
               <input type="password" id="studentPinInput" maxlength="4" placeholder="Enter 4-digit PIN" 
+				onkeydown="if(event.key === 'Enter') verifyStudentPinLogin();"
                 class="w-full border border-slate-200 bg-slate-50/50 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white font-semibold text-slate-800 tracking-widest transition-all mt-1">
             </div>
             
@@ -142,16 +143,24 @@
             </div>
           </div>
 
-          <!-- QR CODE ONLINE PAYMENT SECTION (Admin Approval Required) -->
+			<!-- QR CODE ONLINE PAYMENT SECTION (Admin Approval Required) -->
           <div id="studentQrSection" class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 mt-4">
             <h4 class="text-sm font-extrabold text-slate-800 mb-2 flex items-center gap-2">
               <i class="fa-solid fa-qrcode text-blue-900"></i> Pay Online via QR Code
             </h4>
-            <p class="text-xs text-slate-500 mb-4">Institute QR code scan karke payment karein aur transaction details yahan submit karein (Admin approval ke baad update hoga):</p>
-            <div class="flex flex-col sm:flex-row items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
-              <div class="w-32 h-32 bg-white p-2 rounded-xl border border-slate-200 shadow-sm shrink-0 flex items-center justify-center">
-                <img src="qr.jpeg" alt="Payment QR Code" class="w-full h-full object-contain">
+            <p class="text-xs text-slate-500 mb-4">Institute QR code scan karke payment karein aur transaction details yahan submit karein (Institute Office Approval ke baad update hoga):</p>
+			<div class="flex flex-col sm:flex-row items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <!-- QR Code & UPI Button ek hi column me niche-upar -->
+              <div class="flex flex-col items-center gap-2.5 shrink-0">
+                <div class="w-32 h-32 bg-white p-2 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer" onclick="openQrZoom()" title="Click to Zoom QR">
+                  <img src="qr.jpeg" alt="Payment QR Code" class="w-full h-full object-contain hover:scale-105 transition-transform">
+                </div>
+                <button onclick="payViaUpiApp()" class="w-32 bg-blue-600 hover:bg-blue-700 text-white py-1.5 rounded-lg font-extrabold text-[11px] shadow-sm transition-all flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-bolt text-[10px]"></i> Pay via UPI
+                </button>
               </div>
+
+              <!-- Right side fields -->
               <div class="w-full space-y-3">
                 <div>
                   <label class="text-[11px] font-bold text-slate-600">Amount Paying (₹)</label>
@@ -162,7 +171,7 @@
                   <input type="text" id="stOnlineRemarks" placeholder="e.g. UPI Ref: 1234567890" class="w-full border border-slate-200 rounded-xl px-3 py-2 text-xs">
                 </div>
                 <button onclick="submitStudentOnlinePayment()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-xl font-extrabold text-xs shadow-md transition-all">
-                  Submit Payment for Institute Admin Approval
+                  Submit Payment for Institute Office Approval
                 </button>
               </div>
             </div>
@@ -535,6 +544,21 @@
   <!-- RECEIPT MODAL -->
   <div id="receiptModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
+	
+		<!-- QR ZOOM MODAL -->
+  <div id="qrZoomModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl text-center relative space-y-4">
+      <button onclick="closeQrZoom()" class="absolute top-4 right-4 w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-600 flex items-center justify-center transition-all">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+      <h3 class="text-base font-extrabold text-slate-800">Scan & Pay Online</h3>
+      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex items-center justify-center">
+        <img src="qr.jpeg" alt="Zoomed QR Code" class="w-64 h-64 object-contain">
+      </div>
+      <p class="text-xs text-slate-500">Credulous Institute of Computer Science</p>
+      <button onclick="closeQrZoom()" class="w-full bg-blue-900 hover:bg-blue-950 text-white py-2.5 rounded-xl font-bold text-xs transition-all">Close</button>
+    </div>
+  </div>
       
       <!-- 1. STUDENT COPY -->
       <div id="receiptCard2" class="receiptCard border-2 border-blue-900 p-4 rounded-2xl bg-white shadow-inner relative overflow-hidden">
@@ -1540,6 +1564,30 @@
       if (data.status !== "success") return alert(data.message);
       alert(data.message);
       await loginAdmin(true);
+    }
+	
+	// QR Zoom Functions
+    function openQrZoom() {
+      document.getElementById("qrZoomModal").classList.remove("hidden");
+    }
+    function closeQrZoom() {
+      document.getElementById("qrZoomModal").classList.add("hidden");
+    }
+
+    // Direct UPI App Redirect Function
+    function payViaUpiApp() {
+      const amount = document.getElementById("stOnlineAmount").value;
+      if (!amount || amount <= 0) {
+        alert("Kripya pehle Amount darj karein!");
+        return;
+      }
+      
+      // Yahan apni ya institute ki UPI ID aur Name daal dein (jaise okaxis, okybl, paytm etc.)
+      const upiID = "8864901598@ybl"; // Aap ise apni asli UPI ID se badal sakte hain
+      const merchantName = "Credulous Institute";
+      
+      const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(merchantName)}&am=${amount}&cu=INR`;
+      window.location.href = upiUrl;
     }
   </script>
 </body>
