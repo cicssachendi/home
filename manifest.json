@@ -1,10 +1,11 @@
 {
-  "name": "Credulous Institute Fees Portal",
-  "short_name": "CICS Fees",
-  "start_url": "./",
+  "name": "CICS",
+  "short_name": "CICS",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#1e3a8a",
-  "theme_color": "#1e3a8a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "logo.png",
