@@ -1601,6 +1601,24 @@
     });
   });
 }
+		let inactivityTimer = null;
+
+		// Inactivity Timer Logic
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      if (ADMIN_PIN) {
+        // 15 Minutes ka timeout (15 * 60 * 1000 ms)
+        inactivityTimer = setTimeout(() => {
+          alert("Session expired due to inactivity. Please log in again.");
+          logoutAdmin();
+        }, 15 * 60 * 1000); 
+      }
+    }
+
+    // Activity events par timer reset karne ke liye listeners
+    ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'].forEach(evt => {
+      document.addEventListener(evt, resetInactivityTimer, true);
+    });
 	
   </script>
 </body>
