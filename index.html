@@ -535,6 +535,121 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+		
+		@keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); border-color: #3b82f6; }
+            70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); border-color: #60a5fa; }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); border-color: #3b82f6; }
+        }
+
+        /* Non-Intrusive Modern Floating Toast Popup */
+        .counsel-toast {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 320px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            z-index: 9990;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px) scale(0.96);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] .counsel-toast {
+            background: rgba(30, 41, 59, 0.92);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .counsel-toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .counsel-toast-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .counsel-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 30px;
+        }
+
+        [data-theme="dark"] .counsel-tag {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+        }
+
+        .counsel-close-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1;
+            padding: 2px;
+            transition: color 0.2s ease;
+        }
+
+        .counsel-close-btn:hover {
+            color: #ef4444;
+        }
+
+        .counsel-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .counsel-toast-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 10px 14px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .counsel-toast-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+        }
+
+        @media (max-width: 576px) {
+            .counsel-toast {
+                left: 15px;
+                right: 15px;
+                width: auto;
+                bottom: 15px;
+            }
+        }
 
         /* Section Layouts */
         .section {
@@ -2132,19 +2247,62 @@
             }, { threshold: 0.2 });
             observer.observe(statsEl);
         }
+		
+		/* Non-Intrusive Floating Toast Timing: 10s Initial & 40s Recurring */
+let toastTimer = null;
+
+function showCounselToast() {
+    const toast = document.getElementById('counselToast');
+    if (toast) {
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.opacity = '1';
+            toast.style.visibility = 'visible';
+            toast.style.transform = 'translateY(0) scale(1)';
+        }, 50);
+    }
+}
+
+function dismissCounselToast() {
+    const toast = document.getElementById('counselToast');
+    if (toast) {
+        toast.style.opacity = '0';
+        toast.style.visibility = 'hidden';
+        toast.style.transform = 'translateY(30px) scale(0.96)';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 450);
+        
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(showCounselToast, 40000);
+    }
+}
+
+// 10 second countdown
+toastTimer = setTimeout(showCounselToast, 10000);
+		
     </script>
 	<!-- Glowing Pulse Border Fee Portal Button -->
-<a href="fee-portal.html" target="_blank" style="position: fixed; bottom: 100px; right: 20px; background: #0f172a; color: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4); z-index: 9999; display: flex; align-items: center; gap: 10px; font-family: sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid #3b82f6; animation: pulseGlow 2s infinite; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<a href="fees-portal.html" target="_blank" style="position: fixed; bottom: 100px; right: 20px; background: #0f172a; color: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4); z-index: 9999; display: flex; align-items: center; gap: 10px; font-family: sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid #3b82f6; animation: pulseGlow 2s infinite; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
   <i class="fa-solid fa-graduation-cap" style="font-size: 18px; color: #38bdf8;"></i>
   <span>Fee Portal</span>
 </a>
 
-<style>
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); border-color: #3b82f6; }
-  70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); border-color: #60a5fa; }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); border-color: #3b82f6; }
-}
-</style>
+			<!-- Non-Intrusive Modern Slide-in Toast -->
+<div class="counsel-toast" id="counselToast">
+    <div class="counsel-toast-header">
+        <span class="counsel-tag"><i class="fa-solid fa-graduation-cap"></i> Admission Help</span>
+        <button class="counsel-close-btn" onclick="dismissCounselToast()" title="Close">&times;</button>
+    </div>
+    <div class="counsel-title">
+        बेस्ट करियर गाइडेंस व कंप्यूटर कोर्स की जानकारी के लिए ।
+    </div>
+    <!-- Apna form link yahan replace karein -->
+    <a href="https://forms.gle/zkozhThisj3XbjTr5" target="_blank" class="counsel-toast-link" onclick="dismissCounselToast()">
+        <span>Free Counselling का फार्म भरें</span>
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+</div>
+
 </body>
 </html>
