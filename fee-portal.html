@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Credulous Institute - Fees Portal</title>
+  <!-- Favicon (Tab Institute Logo) -->
+    <link rel="icon" type="image/jpeg" href="Institute Logo.webp">
+    <link rel="shortcut icon" type="image/jpeg" href="Institute Logo.webp">
+    <link rel="apple-touch-icon" href="Institute Logo.webp">
   <meta name="theme-color" content="#1e3a8a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -50,7 +54,7 @@
       <div class="max-w-4xl mx-auto px-4 py-3.5 flex justify-between items-center">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-white shadow-inner">
-  <img src="logo.png" alt="CICS Logo" class="w-full h-full object-contain">
+  <img src="Institute Logo.webp" alt="CICS Institute Logo" class="w-full h-full object-contain">
 </div>
           <div>
             <h1 class="text-sm sm:text-base font-extrabold tracking-wide uppercase">Credulous Institute</h1>
@@ -340,12 +344,12 @@
           </div>
           <div class="grid grid-cols-2 gap-3.5">
             <div>
-              <label class="text-xs font-bold text-slate-600">Total Fees (₹) *</label>
-              <input type="number" id="addTotalFees" placeholder="4500" class="w-full border border-slate-200 rounded-xl px-3.5 py-3 text-sm mt-1 font-bold text-blue-900">
+              <label class="text-xs font-bold text-slate-600">Total Course Fees (₹) *</label>
+              <input type="number" id="addTotalFees" placeholder="6200" class="w-full border border-slate-200 rounded-xl px-3.5 py-3 text-sm mt-1 font-bold text-blue-900">
             </div>
             <div>
-              <label class="text-xs font-bold text-slate-600">Admission Paid (₹)</label>
-              <input type="number" id="addInitialPay" value="0" class="w-full border border-slate-200 rounded-xl px-3.5 py-3 text-sm mt-1 font-bold text-emerald-700">
+              <label class="text-xs font-bold text-slate-600">Registration Fees Paid (₹)</label>
+              <input type="number" id="addInitialPay" value="200" class="w-full border border-slate-200 rounded-xl px-3.5 py-3 text-sm mt-1 font-bold text-emerald-700">
             </div>
           </div>
           <button onclick="submitNewStudent()" class="w-full bg-blue-900 hover:bg-blue-950 text-white py-3.5 rounded-xl font-extrabold text-sm shadow-lg shadow-blue-900/20 transition-all mt-2">
@@ -1306,7 +1310,7 @@
 
         const s = data.student;
         const photoEl = document.getElementById("stPhoto");
-        if (photoEl) photoEl.src = "images/" + s.name + ".jpg";
+        if (photoEl) photoEl.src = "images/" + s.name + ".webp";
         
         const qrSec = document.getElementById("studentQrSection");
         if (qrSec) qrSec.classList.remove("hidden");
