@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="hi" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Open 2026 | Credulous Institute of Computer Science (CICS Sachendi, Kanpur)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef6ff',
+                            100: '#d9eaff',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-hero {
+            background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 40%),
+                        #f8fafc;
+        }
+        .glow-card {
+            box-shadow: 0 10px 30px -10px rgba(30, 58, 138, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-blue-600 selection:text-white">
+
+    <!-- Top Urgency Notice Bar -->
+    <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white text-xs py-2.5 px-4 shadow-sm border-b border-blue-950">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-400 text-slate-950 uppercase tracking-wide animate-pulse">
+                    <i class="fa-solid fa-fire mr-1"></i> New Batch 2026
+                </span>
+                <span class="text-slate-200 font-medium">सीमित सीटें उपलब्ध! निःशुल्क डेमो क्लास एवं करियर काउंसलिंग के लिए आज ही रजिस्टर करें।</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-semibold">
+                <a href="tel:+916386600838" class="text-amber-300 hover:text-white flex items-center gap-1 transition">
+                    <i class="fa-solid fa-phone"></i> +91 6386600838
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="https://wa.me/916386600838?text=Hello%20CICS,%20I%20am%20interested%20in%20Admission%20and%20Courses" target="_blank" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Helpdesk
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="https://credulousinstitute.in" target="_blank" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-700 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-blue-500/20">
+                        CICS
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">CREDULOUS INSTITUTE</span>
+                        </div>
+                        <p class="text-xs text-blue-700 font-bold tracking-wide">OF COMPUTER SCIENCE • SACHENDI, KANPUR</p>
+                    </div>
+                </a>
+
+                <!-- Quick Nav Links -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                    <a href="#courses" class="hover:text-blue-600 transition">पॉपुलर कोर्सेज</a>
+                    <a href="#benefits" class="hover:text-blue-600 transition">संस्थान की खासियतें</a>
+                    <a href="#testimonials" class="hover:text-blue-600 transition">छात्रों के अनुभव</a>
+                    <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center gap-2.5">
+                    <a href="https://credulousinstitute.in" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
+                        <i class="fa-solid fa-globe"></i> मुख्य वेबसाइट
+                    </a>
+                    <a href="#apply-now" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition">
+                        <span>Counselling फॉर्म भरें</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero py-12 sm:py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Pitch / Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-blue-900 text-xs font-bold border border-blue-200">
+                        <i class="fa-solid fa-award text-blue-600"></i> सचेंडी-कानपुर का सर्वश्रेष्ठ प्रैक्टिकल कंप्यूटर संस्थान
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
+                        कंप्यूटर सीखें, <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                            करियर बनाएं और सरकारी व प्राइवेट जॉब पाएं!
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        <strong>Credulous Institute of Computer Science (CICS)</strong> में पाएं 100% प्रैक्टिकल ट्रेनिंग, पर्सनल कंप्यूटर सीट, सरकारी मान्यता प्राप्त सर्टिफिकेट्स और डायरेक्टर <strong>Er. Vishal Singh</strong> के मार्गदर्शन में सीधा करियर गाइडेंस।
+                    </p>
+
+                    <!-- Key Trust Points -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-desktop text-blue-600 text-lg"></i>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-slate-900 leading-tight">1:1 PC सेटअप</p>
+                                <p class="text-[11px] text-slate-500">हर छात्र को अलग कंप्यूटर</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-certificate text-amber-500 text-lg"></i>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-slate-900 leading-tight">Govt. Verified</p>
+                                <p class="text-[11px] text-slate-500">मान्यता प्राप्त प्रमाण पत्र</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-hand-holding-dollar text-emerald-600 text-lg"></i>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-slate-900 leading-tight">किफायती फीस</p>
+                                <p class="text-[11px] text-slate-500">आसान किस्तों में भुगतान</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
+                        <a href="#apply-now" class="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm rounded-2xl shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2">
+                            <span>ऑनलाइन एडमिशन फॉर्म भरें</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="https://wa.me/916386600838?text=Hello%20CICS,%20mujhe%20admission%20aur%20fees%20ki%20detail%20chahiye" target="_blank" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-2xl shadow-md transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>व्हाट्सएप पर जानकारी लें</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Quick Info Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 glow-card relative">
+                        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+                            🔥 2026 Admissions Open
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">नया बैच शुरू हो रहा है!</h3>
+                        <p class="text-xs text-slate-500 mb-5">सुबह 8:00 बजे से शाम 7:00 बजे तक विभिन्न बैच उपलब्ध</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50/70 border border-blue-100">
+                                <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="text-xs">
+                                    <p class="font-bold text-slate-900">3 दिन की फ्री ट्रायल क्लास</p>
+                                    <p class="text-slate-600">पहले क्लास देखें, समझ आए तभी एडमिशन लें!</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50/70 border border-emerald-100">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="text-xs">
+                                    <p class="font-bold text-slate-900">जॉब ओरिएंटेड स्किल ट्रेनिंग</p>
+                                    <p class="text-slate-600">ऑफिस वर्क, एकाउंटिंग, डाटा एंट्री व कोडिंग में परफेक्ट तैयारी</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-purple-50/70 border border-purple-100">
+                                <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="text-xs">
+                                    <p class="font-bold text-slate-900">सुगम व सुरक्षित लोकेशन</p>
+                                    <p class="text-slate-600">गायत्री नगर, सचेंडी, कानपुर नगर (बॉयज व गर्ल्स के लिए उपयुक्त)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs">
+                            <span class="text-slate-500">डायरेक्टर हेल्पलाइन:</span>
+                            <a href="tel:+916386600838" class="font-bold text-blue-700 hover:underline">
+                                <i class="fa-solid fa-phone mr-1"></i> Er. Vishal Singh (+91 6386600838)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Cards Section -->
+    <section id="courses" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-black tracking-widest text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    High Demand Computer Courses
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">
+                    CICS के लोकप्रिय एवं रोजगारपरक कोर्सेज
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    प्रत्येक कोर्स आधुनिक पाठ्यक्रम और व्यावहारिक प्रोजेक्ट्स के साथ तैयार किया गया है।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- ADCA -->
+                <div class="bg-slate-50 hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </span>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">1 वर्ष डिप्लोमा</span>
+                        </div>
+                        <h3 class="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition">ADCA</h3>
+                        <p class="text-xs font-semibold text-slate-500 mb-2">Advance Diploma in Computer Applications</p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Fundamentals, Windows, MS Office</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Tally ERP 9 + GST Accounting</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> DTP (Photoshop, CorelDraw)</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Web Basics, Internet & Email</li>
+                        </ul>
+                    </div>
+                    <a href="#apply-now" class="w-full text-center py-2 px-3 bg-white group-hover:bg-blue-600 text-slate-800 group-hover:text-white font-bold text-xs rounded-xl border border-slate-200 group-hover:border-blue-600 transition">
+                        इस कोर्स के लिए रजिस्टर करें
+                    </a>
+                </div>
+
+                <!-- NIELIT O Level & CCC -->
+                <div class="bg-slate-50 hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-landmark"></i>
+                            </span>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Govt. Job Essential</span>
+                        </div>
+                        <h3 class="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition">NIELIT O Level & CCC</h3>
+                        <p class="text-xs font-semibold text-slate-500 mb-2">सरकारी नौकरियों (UPSSSC, RO/ARO, ASI) हेतु अनिवार्य</p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> M1: IT Tools & Network Basics</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> M2: Web Designing (HTML, CSS, JS)</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> M3: Python Programming</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> M4: Internet of Things (IoT)</li>
+                        </ul>
+                    </div>
+                    <a href="#apply-now" class="w-full text-center py-2 px-3 bg-white group-hover:bg-blue-600 text-slate-800 group-hover:text-white font-bold text-xs rounded-xl border border-slate-200 group-hover:border-blue-600 transition">
+                        इस कोर्स के लिए रजिस्टर करें
+                    </a>
+                </div>
+
+                <!-- Tally Prime + GST -->
+                <div class="bg-slate-50 hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </span>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">3 से 6 माह</span>
+                        </div>
+                        <h3 class="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition">Tally ERP 9 with GST</h3>
+                        <p class="text-xs font-semibold text-slate-500 mb-2">Professional Business Accounting</p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Ledger, Voucher & Billing</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> CGST, SGST, IGST Calculation</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Balance Sheet & Profit-Loss</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Real Market Accounting Projects</li>
+                        </ul>
+                    </div>
+                    <a href="#apply-now" class="w-full text-center py-2 px-3 bg-white group-hover:bg-blue-600 text-slate-800 group-hover:text-white font-bold text-xs rounded-xl border border-slate-200 group-hover:border-blue-600 transition">
+                        इस कोर्स के लिए रजिस्टर करें
+                    </a>
+                </div>
+
+                <!-- Advance Excel & Coding -->
+                <div class="bg-slate-50 hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </span>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">Data & Coding</span>
+                        </div>
+                        <h3 class="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition">Adv. Excel & Python</h3>
+                        <p class="text-xs font-semibold text-slate-500 mb-2">Data Analytics & Software Basics</p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> VLOOKUP, HLOOKUP, Pivot Tables</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> MIS Reporting & Dashboards</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Python Programming Fundamentals</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Real-world Project Training</li>
+                        </ul>
+                    </div>
+                    <a href="#apply-now" class="w-full text-center py-2 px-3 bg-white group-hover:bg-blue-600 text-slate-800 group-hover:text-white font-bold text-xs rounded-xl border border-slate-200 group-hover:border-blue-600 transition">
+                        इस कोर्स के लिए रजिस्टर करें
+                    </a>
+                </div>
+            </div>
+
+            <!-- Other courses badges -->
+            <div class="mt-8 p-4 rounded-2xl bg-blue-50 border border-blue-200 text-center">
+                <p class="text-xs font-bold text-slate-700 mb-2">अन्य उपलब्ध कोर्सेज:</p>
+                <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold">
+                    <span class="bg-white px-3 py-1 rounded-full text-slate-800 border border-slate-200">DCA</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-slate-800 border border-slate-200">DTP (Graphic Design)</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-slate-800 border border-slate-200">Hindi/English Typing (Mangal/Kruti)</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-slate-800 border border-slate-200">Computer Hardware & Networking</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-slate-800 border border-slate-200">Digital Marketing </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose CICS (Key Benefits) -->
+    <section id="benefits" class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                    Why Students Love CICS
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">
+                    क्रेडुलस इंस्टीट्यूट (CICS) ही क्यों चुनें?
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    केवल किताबी ज्ञान नहीं, बल्कि हर स्टूडेंट को इंडस्ट्री के अनुसार प्रैक्टिकल रूप से सक्षम बनाना हमारा लक्ष्य है।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">प्रत्येक छात्र पर व्यक्तिगत ध्यान</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        हमारे यहाँ एक कंप्यूटर पर सिर्फ एक छात्र बैठता है। कोई भीड़भाड़ नहीं। डाउट होने पर फैकल्टी तुरंत मदद करती है।
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">ऑनलाइन वेरीफाइड सर्टिफिकेट</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        कोर्स पूरा होने के बाद संस्थान की आधिकारिक वेबसाइट <strong>credulousinstitute.in</strong> पर ऑनलाइन रोल नंबर से सत्यापन योग्य सर्टिफिकेट।
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">लचीला बैच समय (Flexible Timings)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        कॉलेज स्टूडेंट्स, जॉब करने वाले और प्रतियोगी परीक्षा की तैयारी कर रहे छात्रों के लिए सुबह, दोपहर एवं शाम के अलग-अलग बैचेस।
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">इंजीनियरिंग बैकग्राउंड फैकल्टी</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        संस्थान के निदेशक <strong>Er. Vishal Singh</strong> और उनकी टीम का सीधा मार्गदर्शन, जिससे बेसिक से लेकर एडवांस लेवल तक की क्लैरिटी मिलती है।
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">हाई-स्पीड इंटरनेट व आधुनिक लैब</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        फास्ट इंटरनेट, पावर बैकअप (इनवर्टर/जनरेटर) और लेटेस्ट ऑपरेटिंग सिस्टम युक्त कंप्यूटर जिससे क्लास कभी बीच में न रुके।
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base mb-1">इंटरव्यू व रिज्यूमे मेकिंग सपोर्ट</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        कोर्स के साथ फ्री रिज्यूमे ड्राफ्टिंग, ऑफिस मेल राइटिंग, और जॉब इंटरव्यू में पूछे जाने वाले महत्वपूर्ण कंप्यूटर प्रश्नों की तैयारी।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials / Social Proof -->
+    <section id="testimonials" class="py-14 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Student Reviews
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">हमारे छात्रों की राय</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">सचेंडी और आसपास के सैकड़ों छात्रों का भरोसा</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="flex text-amber-400 text-xs mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic">"मैंने CICS से ADCA किया। पहले मुझे कंप्यूटर बिल्कुल नहीं आता था, लेकिन विशाल सर ने बहुत ही सरल तरीके से सिखाया। आज मैं आसानी से ऑफिस वर्क कर लेता हूँ।"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-800">अमित कुमार</span>
+                        <span class="text-[10px] text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-semibold">ADCA Student</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="flex text-amber-400 text-xs mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic">"Tally Prime और GST की प्रैक्टिकल बिलिंग सीखने के लिए सचेंडी में सबसे बढ़िया इंस्टिट्यूट है। हर वाउचर और टैक्स एंट्री खुद कंप्यूटर पर कराई जाती है।"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-800">प्रिया कटियार</span>
+                        <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-semibold">Tally Prime Batch</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="flex text-amber-400 text-xs mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic">"CCC और टाइपिंग दोनों की तैयारी एक साथ हो गई। गवर्नमेंट जॉब के लिए फॉर्म भरने में सर्टिफिकेट ऑनलाइन वेरीफाई भी हो गया। थैंक्स CICS!"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-800">सौरभ सिंह</span>
+                        <span class="text-[10px] text-amber-600 bg-amber-50 px-2 py-0.5 rounded font-semibold">CCC & Typing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Application / Enquiry Form Container -->
+    <section id="apply-now" class="py-14 px-3 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-3xl border border-slate-200 glow-card overflow-hidden">
+            <!-- Form Header -->
+            <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold mb-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        CICS Official Admission Desk
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">ऑनलाइन प्रवेश एवं पूछताछ फॉर्म (Counselling Form)</h3>
+                    <p class="text-xs text-blue-200 mt-1">कृपया अपनी सही जानकारी भरें। हमारी टीम 24 घंटे के अंदर आपसे संपर्क करेगी।</p>
+                </div>
+                
+                <div class="flex items-center gap-2 self-stretch sm:self-auto justify-end">
+                    <button onclick="reloadAdmissionForm()" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-rotate-right" id="refresh-icon"></i> रिफ्रेश फॉर्म
+                    </button>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQzixGu6HiTfQV7AC5n0ym1GtHDb5jpac22JP-vSjOY-fM-g/viewform" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition flex items-center gap-1.5 shadow">
+                        <span>अलग टैब में खोलें</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Iframe Container with Loader -->
+            <div class="relative bg-slate-100 min-h-[900px] flex items-center justify-center p-2 sm:p-4">
+                <div id="form-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-white/95 z-10 transition-opacity">
+                    <div class="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                    <p class="mt-4 text-sm font-bold text-slate-800">CICS Counselling फॉर्म लोड हो रहा है...</p>
+                    <p class="text-xs text-slate-500 mt-1">Please wait a moment</p>
+                </div>
+
+                <!-- Embedded Form -->
+                <iframe 
+                    id="admissionIframe"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdQzixGu6HiTfQV7AC5n0ym1GtHDb5jpac22JP-vSjOY-fM-g/viewform?embedded=true" 
+                    class="w-full rounded-2xl border-0 shadow-inner" 
+                    style="height: 1250px; min-height: 850px;"
+                    onload="document.getElementById('form-loader').classList.add('hidden');"
+                    allowfullscreen>
+                    लोड हो रहा है…
+                </iframe>
+            </div>
+
+            <!-- Bottom Note -->
+            <div class="p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-600 text-base"></i>
+                    <span>आपकी जानकारी पूरी तरह सुरक्षित है एवं केवल संस्थान प्रवेश काउंसलिंग के लिए उपयोग की जाएगी।</span>
+                </div>
+                <a href="tel:+916386600838" class="font-bold text-blue-700 hover:underline shrink-0">
+                    सीधा कॉल करें: +91 6386600838
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="py-14 bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Frequently Asked Questions
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+            </div>
+
+            <div class="space-y-3">
+                <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+                    <summary class="font-bold text-slate-900 text-sm flex items-center justify-between list-none">
+                        <span>1. मुझे कंप्यूटर बिल्कुल नहीं आता, क्या मैं सीख सकता/सकती हूँ?</span>
+                        <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform text-slate-500"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-200 leading-relaxed">
+                        बिल्कुल! हमारे यहाँ क्लास कंप्यूटर चालू करने (Power On), माउस पकड़ने और कीबोर्ड बेसिक से शुरू होती है। बिना किसी पूर्व ज्ञान के भी आप आसानी से सीख सकते हैं।
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+                    <summary class="font-bold text-slate-900 text-sm flex items-center justify-between list-none">
+                        <span>2. क्या डेमो क्लास की कोई फीस है?</span>
+                        <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform text-slate-500"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-200 leading-relaxed">
+                        नहीं, डेमो क्लास पूरी तरह निःशुल्क (FREE) है। आप 2 से 3 दिन क्लास आकर शिक्षकों की पढ़ाई और सिस्टम का अनुभव ले सकते हैं।
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+                    <summary class="font-bold text-slate-900 text-sm flex items-center justify-between list-none">
+                        <span>3. क्या सर्टिफिकेट प्राइवेट व सरकारी में मान्य है।</span>
+                        <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform text-slate-500"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-200 leading-relaxed">
+                      हाँ, हमारे NIELIT के सभी सर्टिफिकेशन्स सरकारी व गैर-सरकारी दोनों नौकरियों में मान्य हैं। इंस्टिट्यूट के सभी कोर्स के सर्टिफिकेट को इसकी आधिकारिक वेबसाइट credulousinstitute.in पर कभी भी ऑनलाइन सत्यापित किया जा सकता है।
+                    </p>
+                </details>
+
+                <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+                    <summary class="font-bold text-slate-900 text-sm flex items-center justify-between list-none">
+                        <span>4. संस्थान की टाइमिंग और लोकेशन क्या है?</span>
+                        <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform text-slate-500"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-200 leading-relaxed">
+                        संस्थान गायत्री नगर, सचेंडी, कानपुर नगर - 209304 में स्थित है। यह सोमवार से शनिवार सुबह 8:00 AM से शाम 7:00 PM और रविवार को 11:00 AM से दोपहर 2:00 PM तक खुला रहता है।
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director Desk & Campus Contact Details -->
+    <section class="py-12 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-8 space-y-3">
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">
+                            <i class="fa-solid fa-user-tie mr-1"></i> Director's Message
+                        </span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white">
+                            "हमारा संकल्प: हर छात्र को कंप्यूटर में दक्ष और आत्मनिर्भर बनाना"
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            आज के डिजिटल युग में कंप्यूटर ज्ञान केवल एक डिग्री नहीं बल्कि नौकरी और स्वरोजगार की बुनियादी आवश्यकता है। CICS सचेंडी में हम आधुनिक इंफ्रास्ट्रक्चर और सही मार्गदर्शन के साथ आपको तैयार करते हैं।
+                        </p>
+                        <p class="text-sm font-bold text-amber-300 pt-1">
+                            — Er. Vishal Singh <span class="text-xs text-slate-400 font-normal">(Director, CICS)</span>
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15 space-y-3">
+                        <h4 class="text-sm font-bold text-white border-b border-white/10 pb-2">सीधा संपर्क सूत्र (Contact Desk)</h4>
+                        <div class="text-xs space-y-2 text-slate-200">
+                            <p class="flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-emerald-400"></i>
+                                <a href="tel:+916386600838" class="hover:underline font-semibold text-white">+91 6386600838</a>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                                <a href="https://wa.me/916386600838" target="_blank" class="hover:underline font-semibold text-white">WhatsApp Chat</a>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-blue-400"></i>
+                                <span class="break-all">credulousinstitute@gmail.com</span>
+                            </p>
+                            <p class="flex items-start gap-2 pt-1 text-[11px] text-slate-300">
+                                <i class="fa-solid fa-map-pin text-rose-400 mt-0.5"></i>
+                                <span>गायत्री नगर, सचेंडी, कानपुर नगर - 209304</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                <div>
+                    <p class="text-base font-extrabold text-white">CREDULOUS INSTITUTE OF COMPUTER SCIENCE (CICS)</p>
+                    <p class="mt-1 text-slate-400">गायत्री नगर, सचेंडी, कानपुर नगर (उत्तर प्रदेश) - 209304</p>
+                    <p class="mt-1 text-slate-500">© 2026 Credulous Institute. ऑल राइट्स रिजर्व्ड।</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 font-semibold text-slate-300">
+                    <a href="https://credulousinstitute.in" target="_blank" class="hover:text-amber-400 transition">मेन वेबसाइट</a>
+                    <a href="#courses" class="hover:text-amber-400 transition">कोर्सेस</a>
+                    <a href="#apply-now" class="hover:text-amber-400 transition">एडमिशन फॉर्म</a>
+                    <a href="https://credulousinstitute.in" target="_blank" class="hover:text-amber-400 transition">सर्टिफिकेट वेरिफिकेशन</a>
+                    <a href="https://wa.me/916386600838" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition">व्हाट्सएप सपोर्ट</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action for Mobile Students -->
+    <a href="https://wa.me/916386600838?text=Hello%20CICS,%20mujhe%20computer%20course%20admission%20ke%20bare%20me%20janna%20hai" 
+       target="_blank" 
+       title="Chat on WhatsApp"
+       class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30 transition-all hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        function reloadAdmissionForm() {
+            const iframe = document.getElementById('admissionIframe');
+            const loader = document.getElementById('form-loader');
+            const icon = document.getElementById('refresh-icon');
+
+            if (loader) loader.classList.remove('hidden');
+            if (icon) icon.classList.add('fa-spin');
+
+            iframe.src = iframe.src;
+
+            setTimeout(() => {
+                if (icon) icon.classList.remove('fa-spin');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
